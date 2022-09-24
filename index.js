@@ -11,8 +11,8 @@ dotenv.config();
 
 // Create express app
 const app = express();
-const PORT = process.env.DEVELOPMENT_PORT || process.env.PORT || 5000;
-const HOST = process.env.DEVELOPMENT_HOST || '0.0.0.0';
+const PORT = process.env.PORT || 5000;
+const HOST = process.env.HOST || '0.0.0.0';
 
 // Middlewares
 app.use(bodyParser.json({ limit: '30mb' }));
