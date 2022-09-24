@@ -11,7 +11,8 @@ dotenv.config();
 
 // Create express app
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.YOUR_PORT || process.env.PORT || 5000;
+const HOST = process.env.YOUR_HOST || '0.0.0.0';
 
 // Middlewares
 app.use(bodyParser.json({ limit: '30mb' }));
@@ -27,9 +28,9 @@ mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connect to Mongo successfull...');
         // Run server
-        app.listen(PORT, () => {
+        app.listen(PORT, HOST, () => {
             console.log(`Server is running on port ${PORT}...`);
         });
     }).catch((e) => {
-        console.log(e);
+        console.err(e);
     });
