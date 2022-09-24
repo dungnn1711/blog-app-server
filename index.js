@@ -32,5 +32,5 @@ mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
             console.log(`Server is running on port ${PORT}...`);
         });
     }).catch((e) => {
-        console.err(e);
+        console.error(e);
     });
